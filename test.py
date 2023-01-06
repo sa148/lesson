@@ -1,4 +1,5 @@
 x = {'リンゴ' : 120, 'みかん' : 200}
 y = {'梨' : 200}
-x.update(y)
-print(x)
+z = x | y
+z_len = len(z)
+print(z_len)
