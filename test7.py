@@ -1,3 +1,3 @@
-x = 10
-result = x == 10
+x = 'apple'
+result = x == 'apple'
 print(result)
