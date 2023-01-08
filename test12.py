@@ -19,3 +19,13 @@ def question_text(text):
 
 result_text = question_text('apple')
 print(result_text)
+
+# 複数の引数と戻り値 #
+def qustion_exclamation_text(text1, text2):
+    return_text1 = text1 + '?'
+    return_text2 = text2 + '!'
+    return return_text1, return_text2
+
+r1, r2 = qustion_exclamation_text('apple', 'banana')
+print(r1)
+print(r2)
