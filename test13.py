@@ -24,8 +24,9 @@ class BodyCondiction:
         self.height = arg_height
     
     def bmi_calc(self):
-        print('あいうえお')
+        m_height = self.height / 100
+        bmi = self.weight / m_height / m_height
+        print(bmi)
 
 bc = BodyCondiction(55, 150)
-print(bc.weight)
-print(bc.height)
+bc.bmi_calc()
