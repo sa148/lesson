@@ -8,3 +8,9 @@ x = '田中'
 y = '寛治'
 result = f'{x + y}さん'
 print(result)
+
+# 数値版 #
+x = 200
+y = 245
+result = f'合計は{x + y}円です'
+print(result)
