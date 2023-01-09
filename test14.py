@@ -1,19 +1,12 @@
-# 正常に作動 #
-x = 1
-y = 0
+# 例外オブジェクトを複数 #
 
-try:
-    result = x / y
-except ZeroDivisionError:
-    print('ゼロで割ることはできません')
+x = 2
 
-# 例外オブジェクトを変数に代入 #
-x = 1
-y = 0
-
-try:
+try: 
     result = x / y
 except ZeroDivisionError as e:
     print('ゼロで割ることはできません')
     print(e)
-
+except NameError as e:
+    print('変数が定義されていません')
+    print(e)
