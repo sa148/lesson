@@ -1,6 +1,6 @@
-# 例外が発生しない処理 #
-x = 3
-y = 3
+# finallyを追加 #
+x = 2
+y = 0
 
 try:
     result = x / y
@@ -13,3 +13,5 @@ except NameError as e:
 else:
   print(result)
   print('正常に処理されました')
+finally:
+    print('割り算を修了します')
