@@ -1,4 +1,8 @@
-# ゼロで割れずZeroDivisionErrorが起こる #
+# 正常に作動 #
 x = 1
 y = 0
-result = x / y
+
+try:
+    result = x / y
+except ZeroDivisionError:
+    print('ゼロで割ることはできません')
