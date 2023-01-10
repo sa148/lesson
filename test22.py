@@ -5,3 +5,8 @@ with open('test.text') as f:
       print(s_line)
       if s_line == '':
           print('終了です')
+
+# 全てをリスト #
+with open('test.txt') as f:
+    s_line = f.readline
+    print(s_line)
