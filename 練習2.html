@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<script type="text/javascript">
+  Array.prototype.clone = function(){
+    return this.slice(0);
+  }
+   
+  function HuffmanTree(data, is_compressed_data) {
+    if (is_compressed_data) {
+      this.setCompressedData(data);
+    } else {
+      this.data = data;
+      var char_counter = this.getCharCounter();
+      this.setHeaderData(char_counter);
+      this.setTreeData();
+    }
+  }
+   
+  HuffmanTree.prototype.getCharCounter = function() {
+    var char_counter = new Array();
+    for (var i = 0; i < this.data.length; i++) {
+      var ch_num = this.data.charCodeAt(i);
+      if (char_counter[ch_num] == undefined) {
+        char_counter[ch_num] = 0;
+      }
+      char_counter[ch_num]++;
+    }
+   
+    return char_counter;
+  }
+  <!-- 末尾3 -->
+</html>
