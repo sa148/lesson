@@ -1,5 +1,7 @@
-# 先頭２行のみ読み込み #
+# 末尾 #
 with open('test.text') as f:
-    for _ in range(2):
+    for _ in range(4):
       s_line = f.readline
       print(s_line)
+      if s_line == '':
+          print('終了です')
