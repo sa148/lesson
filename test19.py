@@ -3,3 +3,10 @@ import os
 
 result = os.getcwd()
 print(result)
+
+# ファイルをリストで取得 #
+import os
+
+current_dir = os.getcwd()
+result = os.listdir(current_dir)
+print(result)
