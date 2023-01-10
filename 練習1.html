@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<script type="text/javascript">
+  function BitArray() { this.length = 0; }
+   
+  BitArray.prototype.get = function(begin, len) {
+    if(this.length < (begin+len)) { return null; }
+    var value = 0;
+    for (var i = 0; i < len; i++) {
+      value = value << 1;
+      value += (this[begin+i] ? 1 : 0);
+    }
+   
+    return value;
+  }
+   
+  BitArray.prototype.add = function(value, len) {
+    for (var i = 0; i < len; i++) {
+      var v = value >>> (len-i-1);
+      var bit = ((v & 1) == 1);
+      this[this.length] = bit;
+      this.length++;
+    }
+  }
+   
+  BitArray.prototype.byte_size = function() {
+    var size = Math.floor(this.length/8);value="RunLength">
+    if ((this.length % 8) != 0) { size++; }
+    return size;
+  }
+  </script><!-- 末尾2 -->
+</html>
