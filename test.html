@@ -85,5 +85,25 @@
  
   return decode_data.slice(0,len);
 }
-// 末尾2
+function execBWT(input, output) {
+  var data = getStringById(input);
+  var element = document.getElementById(output);
+  element.innerHTML = "元のデータ量: " + data.length + "<br>";
+ 
+  var encode_data = encodeBWT(data);
+  if (encode_data == null) { return; }
+  element.innerHTML += "変換しました。<br>";
+  element.innerHTML += "変換後のデータ量: " + encode_data.length + "<br>";
+  element.innerHTML += "変換後のデータ:<br/> " + encode_data.join("") + "<br>";
+  element.innerHTML += "データを復元します。<br>";
+ 
+  var decode_data = decodeBWT(encode_data.clone());
+  if (decode_data == null) { return; }
+ 
+  element.innerHTML += decode_data.join("");
+}
+</script>
+<br/>
+<input type="button" onClick="execBWT('area1','area2');" value="BWT">
+<!-- 末尾3 -->
 </html>
