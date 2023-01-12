@@ -32,3 +32,8 @@ def test_function():
 
 result1 = test_function()
 print(result1)
+
+# for文戻り値１つ #
+x_dict = {'a' : 100, 'b' : 200, 'c' :300}
+for x in x_dict.items():
+    print(x)
