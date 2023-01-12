@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<script type="text/javascript">
+  String.prototype.toArray = function() {
+    var ary = new Array(this.length);
+    for (var i = 0; i < this.length; i++) {
+      ary[i] = this.charAt(i);
+    }
+    return ary;
+  } 
+   
+  var BWT_BLOCK_LEN = 1000;
+  function encodeBWT(data) {
+    var encode_data = new Array();
+    var BWT_BLOCK_LEN = data.length;
+   
+    var src_data = data;
+    if ((data.length%BWT_BLOCK_LEN) != 0) {
+      for (var i = 0; i < (BWT_BLOCK_LEN - (data.length%BWT_BLOCK_LEN)); i++) {
+        src_data = src_data + '0';
+      }
+    }
+    var block_num = src_data.length/BWT_BLOCK_LEN;
+   
+    encode_data.push(String.fromCharCode(data.length))
+    encode_data.push(String.fromCharCode(block_num))
+   
+    for (var i = 0; i < block_num; i++) {
+      var line = src_data.slice(i*BWT_BLOCK_LEN, (i+1)*BWT_BLOCK_LEN).toArray(); 
+      var block = new Array();
+   
+      for (var j = 0; j < BWT_BLOCK_LEN; j++) {
+        block.push(line.join("") + String.fromCharCode(j));
+        var value = line.shift(i);
+        line.push(value);
+      }
+   
+      block.sort();
+      var encode_line = new Array(BWT_BLOCK_LEN+1);
+      for (var j = 0; j < BWT_BLOCK_LEN; j++) {
+        var n = block[j].charAt(BWT_BLOCK_LEN);
+        if (n == String.fromCharCode(0)) {
+          encode_line[BWT_BLOCK_LEN] = String.fromCharCode(j);
+        }
+        encode_line[j] = block[j].charAt(BWT_BLOCK_LEN-1);
+      }
+      encode_data = encode_data.concat(encode_line);
+    }
+   
+    return encode_data;
+  }
+  // 末尾1
+</html>
