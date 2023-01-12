@@ -14,3 +14,21 @@ y_tuple = tuple(y_list)
 
 result = x_tuple + y_tuple
 print(result)
+
+# 戻り値複数 #
+def test_function():
+    x = 2 + 2
+    y = 3 + 3
+    return x, y
+
+result1, result2 = test_function()
+print(result1, result2)
+
+# 戻り値変数１つ #
+def test_function():
+    x = 2 + 2
+    y = 3 + 3
+    return x, y
+
+result1 = test_function()
+print(result1)
