@@ -49,5 +49,41 @@
    
     return encode_data;
   }
-  // 末尾1
+  function decodeBWT(data) {
+  var decode_data = new Array();
+ 
+  var len = data.shift().charCodeAt(0);
+  var block_num = data.shift().charCodeAt(0);
+  var BWT_BLOCK_LEN = len;
+ 
+  for (var i = 0; i < block_num; i++) {
+    var ary = data.slice(i*(BWT_BLOCK_LEN+1), (i+1)*(BWT_BLOCK_LEN+1));
+    var line_no = ary.pop().charCodeAt(0);
+ 
+    var first_col = new Array(ary.length);
+    for (var j = 0; j < ary.length; j++) {
+      first_col[j] = { ch:ary[j], index:j };
+    }
+ 
+    first_col.sort(function(a,b) { 
+      if (a.ch != b.ch) {
+        return a.ch.charCodeAt(0) - b.ch.charCodeAt(0);
+      } else {
+        return a.index - b.index;
+      }
+    });
+ 
+    line = new Array(ary.length);
+    for (var j = 0; j < ary.length; j++) {
+      var f = first_col[line_no];
+      line[j] = f.ch;
+      line_no = f.index;
+    }
+ 
+    decode_data = decode_data.concat(line);
+  }
+ 
+  return decode_data.slice(0,len);
+}
+// 末尾2
 </html>
