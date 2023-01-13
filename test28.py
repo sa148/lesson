@@ -10,3 +10,15 @@ class WizardClass(HumanClass):
 
 wizard = WizardClass()
 wizard.defebd()
+
+# イニシャライザあり #
+class HumanClass:
+    def __init__(self):
+        print('HumanClassのinit')
+        self.hp = 100
+
+class WizardClass(HumanClass):
+    pass
+
+wizard = WizardClass()
+print(wizard.hp)
