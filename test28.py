@@ -22,3 +22,4 @@ class WizardClass(HumanClass):
 
 wizard = WizardClass()
 print(wizard.hp)
+
