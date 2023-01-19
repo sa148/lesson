@@ -6,3 +6,8 @@ print(x)
 names = ['斎藤', '山田', '田中']
 x = [i + 'さん' for i in names]
 print(x)
+
+# 条件付き #
+x = [i for i in range(11) if i % 2 != 0]
+print(x)
+
