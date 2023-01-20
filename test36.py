@@ -1,0 +1,7 @@
+# zip #
+sales_2020 = [400239, 560213, 542490]
+sales_2019 = [489024, 600000, 300000]
+
+for current, previous in zip(sales_2020, sales_2019):
+    result = (current / previous - 1) * 100
+    print(f'{result:.if}%')
