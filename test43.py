@@ -12,3 +12,7 @@ result = jpholiday.is_holiday(d)
 print(result)
 
 # 祝日全て #
+import jpholiday
+
+result = jpholiday.year_holidays(2023)
+print(result)
