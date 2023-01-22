@@ -10,3 +10,9 @@ d2 = datetime(2023, 1, 22)
 result = d1 - d2
 print(result)
 print(result.days)
+
+# 日付進めた #
+from datetime import datetime, timedelta
+d = datetime(2022, 12, 31, 1, 0, 0)
+result = d + timedelta(days=10)
+print(result)
