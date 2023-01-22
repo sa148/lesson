@@ -7,3 +7,9 @@ print(t)
 from datetime import date
 d = date(2022, 1, 22)
 print(d)
+
+# 曜日取得 #
+from datetime import date
+d = date(2022, 1, 22)
+print(d)
+print(d.weekday())
