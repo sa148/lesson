@@ -21,3 +21,14 @@ class User:
 
 user = User('sato', 20)
 print(user.items)
+
+# frozen #
+from dataclasses import dataclass
+
+@dataclass(frozen=True)
+class User:
+    name: str
+    age: int
+
+user = User('kato', 20)
+user.age = 21
