@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+  </head>
+  <body>
+    <form name="form_repeat">
+      //文字を繰り返す
+      <input type="text" name="f_text" value="☆">
+      <input type="text" name="f_number" value="10" size="2">
+      <input type="button" value="→" onClick="setPoint()">
+      <span id="output"></span>
+      </form>
+      
+      <script type="text/javascript">
+      //フォームから数値を取得
+      function setRepeat() {
+        var s = document.form_repeat.f_text.value; //文字列(1)
+        var num = document.form_repeat.f_number.value; //回数(2)
+        document.getElementById("output").innerHTML = repeatText(s,num); //(3)
+      }
+      
+      //文字を繰り返す
+      function repeatText(s,num) {
+        var t,n;
+        t = "";
+        for (n=0;n<num;n++) {
+          t += s;
+        }
+        return t;
+      }
+      </script>
+  </body>
+</html>
