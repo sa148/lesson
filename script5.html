@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="ha">
+  <head>
+  </head>
+  <body>
+    //乱数の発生
+    <form><input type="button" value="乱数表示" onClick="altRan()"> <span id="rnd">-</span></form>
+    <script type="text/javascript">
+    function altRan() {
+      var r = Math.random(); //乱数の発生
+      document.getElementById("rnd").innerHTML = r; //値の出力
+    }
+</script> 
+  </body>
+</html>
