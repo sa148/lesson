@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+</head>
+<body>
+<form name="formChecker">
+  <input type="radio" name="rbtn" value="yes"> Yes
+  <input type="radio" name="rbtn" value="no" checked> No
+  <input type="button" value="送信" onClick="check()">
+  </form>
+  
+  <script type="text/javascript">
+  function check() {
+    var rcheck = document.formChecker.rbtn[0].checked; //ラジオボタンrbtnの１つ目（rbtn[0]）の状態を取得
+    //rcheckの内容がtrue（ボタンが押されている状態）かどうかで条件分岐
+    if (rcheck) { //tureの場合
+      document.location = "index.html"; //リンク先を呼び出す
+    } else { //falseの場合
+      alert("送信できません"); //アラートを表示する
+    }
+  }
+  </script>
+</body>
+</html>
