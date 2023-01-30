@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+  </head>
+  <body>
+    <form name="form_point">
+      <input type="text" name="f_input" value="123456.7890">
+      <input type="text" name="f_point" value="2" size="2">
+      <input type="button" value="→" onClick="setPoint()">
+      <input type="text" name="f_output">
+      </form>
+      
+      <script type="text/javascript">
+      //フォームから数値を取得
+      function setPoint() {
+        var num = document.form_point.f_number.value; //数値(*1)
+        var point = document.form_point.f_point.value; //揃える桁数(*2)
+        document.form_point.f_output.value = getPointNumber(num,point); //(*3)
+      }
+      
+      //小数点以下を揃える
+      function getPointNumber(num,point) {
+        if (num.indexOf(".") < 0) num += "."; //小数点を付加(*4)
+        var s = num.split("."); //整数部と小数部を分割(*5)
+        s[1] = s[1] + repeatText("0",point); //対応する桁数分の「0」を追加(*6)
+        return s[0] + "." + s[1].substr(0,point); //小数点以下の桁数を揃える(*7)
+      }
+      
+      //文字を繰り返す
+      function repeatText(s,num) {
+        var t,n;
+        t = "";
+        for (n=0;n<num;n++) {
+          t += s;
+        }
+        return t;
+      }
+      </script>
+  </body>
+</html>
