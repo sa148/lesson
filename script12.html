@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+  </head>
+  <body>
+    <form name="form_comma">
+      <input type="text" name="f_input" value="1234567890">
+      <input type="button" value="→" onClick="number_format()">
+      <input type="text" name="f_output">
+      </form>
+      
+      <script type="text/javascript">
+      //フォームから数値を取得
+      function number_format() {
+        var str = document.form_comma.f_input.value; //*1
+        document.form_comma.f_output.value = getComma(str); //*2
+      }
+      
+      //数字にカンマを付ける
+      function getComma(num) {
+        num = new String(num).replace(/,/g, ""); //一旦カンマを削除（*3）
+        while(num != (num = num.replace(/^(-?\d+)(\d{3})/, "$1,$2"))); //3桁毎にカンマを挿入（*4）
+        return num;
+      }
+      </script>
+  </body>
+</html>
