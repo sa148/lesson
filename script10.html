@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+</head>
+<body>
+<script type="text/javascript">
+document.getElementById("view_brs").innerHTML = browser(); //*1
+
+//ブラウザの判定
+function browser() {
+	var brs;
+	if (document.all) { //*2
+		//Internet Explorer
+		brs = "Internet Explorer";
+	} else {
+		//その他のブラウザ
+		brs = "Internet Explorer以外のブラウザ";
+	}
+	return "あなたは<font color='#FF0000'>" + brs + "</font>を使っています。";
+}
+</script>
+</body>
+</html>
