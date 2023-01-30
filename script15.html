@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+  </head>
+  <body>
+    <form>
+      <input type="text" id="f_number" value="12345" size="10" onKeyUp="getLog10()">
+      <span id="keta"></span>
+      </form>
+      
+      <script type="text/javascript">
+      //数値から桁数を取得する
+      function getLog10() {
+        var n,m,s;
+        n = document.getElementById("f_number").value; //数値取得(*1)
+        m = parseInt(n).toString(10).length; //桁数(*2)
+        //出力(*3)
+        s = "";
+        if (n > 0) {
+          s = m + "桁";
+        }
+        document.getElementById("keta").innerHTML = s;
+      }
+      </script>
+  </body>
+</html>
