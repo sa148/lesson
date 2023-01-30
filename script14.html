@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+  </head>
+  <body>
+    <form name="form_zero">
+      <input type="text" name="f_number" value="123456.7890">
+      <input type="text" name="f_digit" value="5" size="2">
+      <input type="button" value="→" onClick="setDigit()">
+      <input type="text" name="f_output">
+      </form>
+      
+      <script type="text/javascript">
+      //フォームから数値を取得
+      function setDigit() {
+        var num = document.form_zero.f_number.value; //数値(*1)
+        var digit = document.form_zero.f_digit.value; //揃える桁数(*2)
+        document.form_zero.f_output.value = getZeroDigit(num,digit); //(*3)
+      }
+      
+      //ゼロで桁数を揃える
+      function getZeroDigit(num,digit) {
+        var n,m,s;
+        //数値を文字列化(*4)
+        if (isNaN(num)) {
+          s = num; //10進数以外にも対応
+        } else {
+          s = num.toString(); //数値のままではlengthが使えない
+        }
+        //足りない桁数分の0を加える(*5)
+        m = digit - s.length;
+        for (n=0;n<m;n++) {
+          s = "0" + s;
+        }
+        //戻り値（テキスト）
+        return s;
+      }
+      </script>
+  </body>
+</html>
