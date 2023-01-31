@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+  </head>
+  <body>
+    <input type="text" id="f_text" value="ここに入力" size="40" onKeyDown="keyInput(ev)"> //*1
+      <span id="text_code"></span>
+
+      <script type="text/javascript">
+      //キー入力の検知
+      function keyInput(event) { //*2
+        var key_event = event || window.event; //*3
+        var key_shift = (key_event.shiftKey); //*4
+        var key_ctrl = (key_event.ctrlKey);
+        var key_alt = (key_event.altKey);
+        var key_meta = (key_event.metaKey);
+        var key_any = key_event.keyCode; //*5
+        //キーに対応した処理
+        var s = "";
+        if (key_shift) s += "shiftキー ";
+        if (key_ctrl) s += "ctrlキー ";
+        if (key_alt) s += "altキー ";
+        if (key_meta) s += "metaキー ";
+        //出力
+        document.getElementById("text_code").innerHTML = s + "Code=" + key_any;
+      }
+      </script>
+  </body>
+</html>
