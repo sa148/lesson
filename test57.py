@@ -6,3 +6,5 @@ if __name__ == '__main__' :
     parser.add_argument('target')
     args = parser.parse_args()
     print(args.target)
+
+
