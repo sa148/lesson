@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+  </head>
+  <body>
+    <input type="button" value="クリック" onClick="keyClick(event)"> //*1
+    <span id="text_key"></span>
+
+    <script type="text/javascript">
+    //クリック時の動作
+    function keyClick(event) { //*2
+      //イベント処理
+      var key_event = event || window.event; //*3
+      var key_shift = (key_event.shiftKey); //*4
+      var key_ctrl = (key_event.ctrlKey);
+      var key_alt = (key_event.altKey);
+      var key_meta = (key_event.metaKey);
+      //キーに対応した処理
+      var s = "click! ";
+      if (key_shift) s += "shiftキー ";
+      if (key_ctrl) s += "ctrlキー ";
+      if (key_alt) s += "altキー ";
+      if (key_meta) s += "metaキー ";
+      //出力
+      document.getElementById("text_key").innerHTML = s;
+    }
+    </script>
+  </body>
+</html>
