@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+  </head>
+  <body>
+    <script type="text/javascript">
+      document.getElementById("n_URL").innerHTML = document.URL;
+      document.getElementById("n_location").innerHTML = document.location;
+      document.getElementById("n_domain").innerHTML = document.domain;
+      document.getElementById("n_pathName").innerHTML = document.location.pathname;
+      document.getElementById("n_fileName").innerHTML = document.location.pathname.split("/").pop();
+      document.getElementById("n_hash").innerHTML = document.location.hash;
+      document.getElementById("n_search").innerHTML = document.location.search;
+      </script>
+  </body>
+</html>
