@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+  </head>
+  <body>
+    <script>
+        //URLを送る
+    function sendURL() {
+      var n,s,url;
+      //URLを取得
+      url = document.location.href;
+      //URLに?が含まれている場合は消去
+      n = url.indexOf("?");
+      if (n > 0) {
+        url = url.substr(0,n); //二重化を防ぐ
+      }
+      //テキストを取得
+      s = document.getElementById("textbox").value;
+      //エンコード
+      s = escape(s);
+      //新しいウィンドウ
+      window.open(url + "?" + s,"_blank","");
+    }
+
+    //URLの検索文字列を取得
+    function getURLSearch() {
+      var get_text;
+      //URLの？以降を取得
+      get_text = document.location.search;
+      get_text = get_text.substring(1,get_text.length);
+      //デコード
+      get_text = unescape(get_text);
+      //出力
+      document.getElementById("view").innerHTML = get_text;
+    }
+  </script>
+  </body>
+</html>
