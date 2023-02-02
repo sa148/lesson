@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+  </head>
+  <body>
+    <form><input type="button" value="おみくじ" onClick="omikuji()"></form>
+      <script type="text/javascript">
+        function omikuji() {
+          rand = Math.floor(Math.random()*5);
+          if (rand == 0) msg = "大吉";
+          if (rand == 1) msg = "中吉";
+          if (rand == 2) msg = "吉";
+          if (rand == 3) msg = "凶";
+          if (rand == 4) msg = "大凶";
+          alert(msg);
+        }
+      </script>
+  </body>
+</html>
