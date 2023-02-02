@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+  </head>
+  <body>
+    <form method="post" action="../datareceive.html" onSubmit="return checkSubmit()">
+      <input type="text" name="text1" value="データを送信します">
+      <input type="submit" value="送信する">
+      <input type="reset" value="クリア">
+      </form>
+      
+      <script type="text/javascript">
+      function checkSubmit() {
+        return confirm("送信しても良いですか？");
+      }
+      </script>
+  </body>
+</html>
