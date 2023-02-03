@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+  </head>
+  <body>
+    <span id="view_mail"></span>
+      <script type="text/javascript">
+      acount = "user"; //アカウント
+      domain = "domain.sample"; //ドメイン
+      ma = acount + "@" + domain;
+      document.getElementById("view_mail").innerHTML = "<a href='javascript:sendmail()'>" + ma + "</a>"; //メールアドレス表示
+
+      function sendmail() {
+        this.location.href = "mailto:" + ma; //メールソフト起動
+      }
+      </script>
+  </body>
+</html>
