@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+  </head>
+  <body>
+    <form name="form_count"><input name="counter" type="text" size="12"></form>
+      <script type="text/javascript">
+      timer_set(); //タイマー動作開始
+
+      function timer_set() {
+        //初期値
+        timer_fix = 2; //小数点以下の桁数(*1)
+
+        //開始時刻
+        var now = new Date(); //(*2)
+        //1/1000秒単位
+        nt = now.getTime(); //(*3)
+        
+        //タイマー始動
+        timerID = setInterval('timer_output()',1000/Math.pow(10,timer_fix)); //(*4)
+      }
+
+      function timer_output() {
+        //現在時刻
+        var now = new Date(); //(*5)
+        //1/1000秒単位
+        mt = now.getTime(); //(*6)
+        
+        //開始時刻と現在時刻の差を出力
+        document.form_count.counter.value = count_format((mt-nt)/1000,timer_fix); //(*7)
+      }
+
+      function count_format(sec,fix) {
+        //sec=秒数 fix=小数桁数
+        var ts = sec.toFixed(fix); //小数点以下の調整
+        var tm = Math.floor(ts / 60); //秒数切り捨て
+        ts = ts % 60; //60秒未満の秒数
+        var th = Math.floor(tm / 60); //分の切り捨て
+        tm = tm % 60; //60分未満の分数
+        //表示の整形
+        if (ts < 10) ts = "0" + ts;
+        if (tm < 10) tm = "0" + tm;
+        if (th < 10) th = "0" + th;
+        return th + ":" + tm + ":" + ts; //文字列を返す
+      }
+      -->
+      </script> 
+  </body>
+</html>
