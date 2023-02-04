@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+  </head>
+  <body>
+    <script>
+        //半角英数を全角文字に
+    function toFullWidth(value) {
+        var s = "";
+        value = String(value);
+        for (var n=0;n<value.length;n++) {
+            var t = value.substr(n,1);
+            if (t.search(/[A-Za-z0-9]/g) == 0) {
+                s += String.fromCharCode(t.charCodeAt(0) + 65248);
+            } else {
+                s += t;
+            }
+        }
+        return s;
+    }
+  </script>
+  </body>
+</html>
