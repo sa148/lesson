@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+  </head>
+  <body>
+    <img name="sushi" src="ice_white.gif" width="32" height="32" border="0">
+      <form name="FM"><input name="TX" type="text" size="30"></form> //*1
+
+      <a href="javascript:;" onMouseOver="msg(1)" onMouseOut="msg(0)">まぐろ</a>
+      <a href="javascript:;" onMouseOver="msg(2)" onMouseOut="msg(0)">えび</a>
+      <a href="javascript:;" onMouseOver="msg(3)" onMouseOut="msg(0)">いか</a>
+      <a href="javascript:;" onMouseOver="msg(4)" onMouseOut="msg(0)">たこ</a>
+      <a href="javascript:;" onMouseOver="msg(5)" onMouseOut="msg(0)">あなご</a>
+      <a href="javascript:;" onMouseOver="msg(6)" onMouseOut="msg(0)">たまご</a>
+      <a href="javascript:;" onMouseOver="msg(7)" onMouseOut="msg(0)">いくら</a>
+      <a href="javascript:;" onMouseOver="msg(8)" onMouseOut="msg(0)">うに</a>
+
+      <script type="text/javascript">
+      icon = new Array();
+      text = new Array("","tuna","shrimp","cuttlefish","octopus","conger","egg","salmon roe","sea urchin eggs"); //*2
+
+      for (n=0; n<9; n++) {
+        icon[n] = new Image();
+      }
+
+      icon[0].src = "ita.gif";
+      icon[1].src = "maguro.gif";
+      icon[2].src = "ebi.gif";
+      icon[3].src = "ika.gif";
+      icon[4].src = "tako.gif";
+      icon[5].src = "anago.gif";
+      icon[6].src = "tamago.gif";
+      icon[7].src = "ikura.gif";
+      icon[8].src = "uni.gif";
+
+      function msg(onoff) {
+        document.sushi.src = icon[onoff].src;
+        document.FM.TX.value = text[onoff]; //*3
+      }
+      </script>
+  </body>
+</html>
