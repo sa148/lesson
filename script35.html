@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+  </head>
+  <body>
+    <img name="sushi" src="ita.gif" width="32" height="32" border="0">
+      <a href="javascript:;" onMouseOver="msg(1)" onMouseOut="msg(0)">まぐろ</a>
+      <a href="javascript:;" onMouseOver="msg(2)" onMouseOut="msg(0)">えび</a>
+      <a href="javascript:;" onMouseOver="msg(3)" onMouseOut="msg(0)">あなご</a>
+      <a href="javascript:;" onMouseOver="msg(4)" onMouseOut="msg(0)">たまご</a>
+
+      <script type="text/javascript">
+      icon = new Array();
+
+      for (n=0; n<5; n++) { //*1
+        icon[n] = new Image(); //*2
+      }
+
+      icon[0].src = "ita.gif"; //*3
+      icon[1].src = "maguro.gif"; //*4
+      icon[2].src = "ebi.gif";
+      icon[3].src = "anago.gif";
+      icon[4].src = "tamago.gif";
+
+      function msg(onoff) { //*5
+        document.sushi.src = icon[onoff].src; //*6
+      }
+      </script>
+  </body>
+</html>
