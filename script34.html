@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+  </head>
+  <body>
+    <image name="image1" src="arrow_yellow.gif" width="8" height="8" border="0"><a href="javascript:;" onMouseOver="msg(1,0)" onMouseOut="msg(1,1)">１つ目のページへ移動</a><br>
+    <image name="image2" src="arrow_yellow.gif" width="8" height="8" border="0"><a href="javascript:;" onMouseOver="msg(2,0)" onMouseOut="msg(2,1)">２つ目のページへ移動</a><br>
+    <image name="image3" src="arrow_yellow.gif" width="8" height="8" border="0"><a href="javascript:;" onMouseOver="msg(3,0)" onMouseOut="msg(3,1)">３つ目のページへ移動</a>
+       
+      <script type="text/javascript">
+      icon = new Array();
+      icon[0] = new Image();
+      icon[1] = new Image();
+      icon[0].src = "arrow_red.gif"; //*1
+      icon[1].src = "arrow_blue.gif"; //*2
+      
+      function msg(num,onoff) {
+        if (num == 1) document.image1.src = icon[onoff].src; //*3
+        if (num == 2) document.image2.src = icon[onoff].src;
+        if (num == 3) document.image3.src = icon[onoff].src;
+      }
+      </script>
+  </body>
+</html>
