@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+  </head>
+  <body>
+    <a href="javascript:changeBG('kogara_4511L.gif')"> <img src="kogara_4511L.gif" width="32" height="32"></a>
+    <img src="kogara_4511L.gif" width="32" height="32" onMouseOver="changeBG('kogara_4511L.gif')">
+    <form><input type="button" value="リセット" onClick="changeBG('none')"></form>
+    <script type="text/javascript">
+    function changeBG(wIMG) {
+      document.body.style.backgroundImage = "url(" + wIMG + ")";
+    }
+    </script>
+  </body>
+</html>
