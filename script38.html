@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+  </head>
+  <body>
+    <a href="javascript:imageChanger(-1)">前へ</a> <img src="ita.gif" name="sushi"> <a href="javascript:imageChanger(1)">次へ</a>
+    <script type="text/javascript">
+    imgFile = new Array("ita.gif","ikura.gif","ebi.gif","maguro.gif","toro.gif","uni.gif"); //*1
+    count = 0; //*2
+    function imageChanger(num) {
+      //切替番号
+      count += num; //*3
+      //画像の枚数確認
+      if (count >= imgFile.length) count = 0; //*4 枚数を超えるとき
+      if (count < 0) count = imgFile.length - 1; //*5 0番目より小さいとき
+      //画像出力
+      document.sushi.src =imgFile[count]; //*6
+    }
+    </script>
+  </body>
+</html>
