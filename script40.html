@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+  </head>
+  <body>
+    <a href="javascript:;" onMouseOver="popupCorner('maguro.gif')" onMouseOut="popupCorner('')">マグロ</a> //*1
+    <a href="javascript:;" onMouseOver="popupCorner('ebi.gif')" onMouseOut="popupCorner('')">エビ</a>
+    <a href="javascript:;" onMouseOver="popupCorner('ika.gif')" onMouseOut="popupCorner('')">イカ</a>
+
+    <script type="text/javascript">
+    //表示位置の作成
+    document.write("<div id='div_area'></div>"); //*1
+
+    //画像を表示
+    function popupCorner(img_file) {
+      var obj = document.getElementById("div_area");
+      
+      obj.style.position = "fixed"; //*2
+
+      if (img_file == "") {
+        obj.innerHTML = ""; //*3
+      } else {
+        //表示位置（右上）
+        obj.style.right = "0px"; //*5
+        obj.style.top = "0px";
+        obj.style.left = "auto";
+        obj.style.bottom = "auto";		
+        //画像を出力
+        obj.innerHTML = "<img src='" + img_file + "'>"; //*4
+      }
+    }
+    </script>
+  </body>
+</html>
